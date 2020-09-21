@@ -1,6 +1,6 @@
 var i=0;
-var text="Want To Write Something?, Give It A Try Here !";
-var speed = 100; 
+var text="Want To Share Something With The World?, Here you go!";
+var speed = 110; 
 
 function typeWriter() {
   if (i < text.length) {

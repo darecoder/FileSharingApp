@@ -12,17 +12,17 @@
 <body>
     <div class='ui fixed inverted menu'>
         <div class='ui conatiner'>
-            <div class='header item'><i class="quote right icon"></i>Blog Site
+            <div class='header item'><i class="quote right icon"></i>ShareLover
 
             </div>
         </div>
         <% if(currentUser){%>
         <a href="/blogs" class='item'>Home</a>
-        <a href="/blogs/new" class='item'>New Post</a>
+        <a href="/profile" class='item'>New File Upload</a>
        <% } %>
         <div class="right menu">
             <% if(currentUser){%>
-            <a class="ui item" href="/profile">Hello, <%=currentUser.username%></a>
+            <a class="ui item" href="#">Hello, <%=currentUser.username%></a>
             <a class="ui item" href="/logout">
                 Logout
             </a>
