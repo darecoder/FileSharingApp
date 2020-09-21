@@ -6,6 +6,8 @@
   - Create an `.env` file and define env variable as URL="Your mongodb atlas connection string"
   - Run `npm start`
   
+  ![screen-capture](https://user-images.githubusercontent.com/42637982/93741663-76ba1300-fc0a-11ea-9c85-75e53a1f848e.gif)
+  
 ## Application Snapshots
 
   - REGISTER
