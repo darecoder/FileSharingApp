@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <link rel='stylesheet' href=' https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/app.css'>  
+    <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
+    <script src='/script/app.js'></script>
+    <title>FILE SHARING APPLICATION</title>
+</head>
+
+<body>
+    <div class='ui fixed inverted menu'>
+        <div class='ui conatiner'>
+            <div class='header item'><i class="quote right icon"></i>Blog Site
+
+            </div>
+        </div>
+        <% if(currentUser){%>
+        <a href="/blogs" class='item'>Home</a>
+        <a href="/blogs/new" class='item'>New Post</a>
+       <% } %>
+        <div class="right menu">
+            <% if(currentUser){%>
+            <a class="ui item" href="#">Hello, <%=currentUser.username%></a>
+            <a class="ui item" href="/logout">
+                Logout
+            </a>
+            <% }else{ %>
+            <a class="ui item" href="/register">Register</a>
+            <a class="ui item" href="/login">Login</a>
+           <% } %>
+        </div>
+    </div>

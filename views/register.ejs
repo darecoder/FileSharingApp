@@ -1,0 +1,34 @@
+<%- include ('partials/header'); -%>
+<div class="mybg">
+  <div class="mymain">
+    <div class="ui middle aligned center aligned grid">
+      <div class="column">
+        
+        <form action="/register" method="POST" class="ui large form">
+          <h2 class="ui image header">
+            <div class="content">
+              Register Account
+            </div>
+          </h2>
+          <div class="ui stacked secondary  segment">
+            <div class="field">
+              <div class="ui left input">
+                <input type="text" name="username" placeholder="Username" required>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left input">
+                <input type="password" name="password" placeholder="Password" required minlength="7">
+              </div>
+            </div>
+            <button type="submit" class="login">Register</button>
+          </div>    
+        </form>
+       <div class="ui message">
+          Already have an account? <a href="/login">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include ('partials/footer'); -%>
