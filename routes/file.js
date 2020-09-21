@@ -7,7 +7,10 @@ const upload=multer({
 })
 
 router.get('/files', middleware.isloggedin, async function (req, res) {
-    res.render('files.ejs');
+    const files=await file.find({isPublic:true})
+    console.log(files);
+    res.render('files.ejs',{files:files});
+
 });
 router.post('/files/upload',middleware.isloggedin,upload.single('file'),async function(req,res){
     const tobeadded={
@@ -29,7 +32,6 @@ router.get('/files/download/:fileid',middleware.isloggedin,async function(req,re
         'Cache-Control':'no-cache',
         'Content-Type':'multipart/form-data',
         'Content-Disposition':'attachment; filename='+buffer.filename,
-        'Content-Length':buffer.file.length
     })
    res.send(buffer.file);
 })

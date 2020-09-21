@@ -140,38 +140,6 @@ body{
     font-size: 35px;
   }
  
-  .card-page{
-    font-size: 16px;
-    font-weight: 700;
-    height: 50px;
-    border-radius:10px ;
-    margin: 30px auto;
-    padding: 0.8em 1em;
-    background-color:#1b1c1d;
-    transition-duration: 0.2s;
-  }
-
-  .card-page a{
-    color: whitesmoke; 
-  }
-
- .card-page:hover{
-  background-color: #000000bd
- }
-
-.pagination{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.options{
-  margin: 2em 2em;
-  display: flex;
-  justify-content: flex-end;
-  color:whitesmoke;
-  padding: 0.8em 1em;
-  font-size: 16px;
-}
 .search-btn{
   width: 15%;
   font-size: 16px; 
@@ -188,145 +156,37 @@ body{
   background-color: #000000bd
 
 }
-.my-img{
-  margin: 5% auto;
+.heading{
+  text-align: center;
+  margin-top:2%;
+  margin-bottom: 2%;
 }
-.my-img img{
-  width: 90%;
+.file-content{
+  align-items: center;
 }
-
-.hidden-btn{
-  margin: 3% auto;
-}
-
-.name{
-  font-weight: 900;
-  font-size: 20px;
-}
-
-.comment-info{
-  margin-top: 1%;
-  margin-bottom: 1%;
-  border:1px solid #d4d4d5;
-  padding: 0% 2%;
-}
-.commentBox{
-  max-height: 500px;
-  overflow: auto;
-  display: flex;
-  flex-direction: column-reverse;
-}
-.uploader {
-  display: block;
-  clear: both;
+table{
   margin: 0 auto;
-  width: 100%;
-  max-width: 600px;
+  width: 80%;
+  text-align: center;
+}
 
-  label {
-    float: left;
-    clear: both;
-    width: 100%;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    background: #fff;
-    border-radius: 7px;
-    border: 3px solid #eee;
-    transition: all .2s ease;
-    user-select: none;
-
-    &:hover {
-      border-color: $theme;
-    }
-    &.hover {
-      border: 3px solid $theme;
-      box-shadow: inset 0 0 0 6px #eee;
-      
-      #start {
-        i.fa {
-          transform: scale(0.8);
-          opacity: 0.3;
-        }
-      }
-    }
-  }
-
-  #start {
-    float: left;
-    clear: both;
-    width: 100%;
-    &.hidden {
-      display: none;
-    }
-    i.fa {
-      font-size: 50px;
-      margin-bottom: 1rem;
-      transition: all .2s ease-in-out;
-    }
-  }
-  #response {
-    float: left;
-    clear: both;
-    width: 100%;
-    &.hidden {
-      display: none;
-    }
-    #messages {
-      margin-bottom: .5rem;
-    }
-  }
-
-  #file-image {
-    display: inline;
-    margin: 0 auto .5rem auto;
-    width: auto;
-    height: auto;
-    max-width: 180px;
-    &.hidden {
-      display: none;
-    }
-  }
+table tbody tr{
+  margin-top: 2%;
+}
+table thead tr th{
+  background-color:black;
+  color:white;
+  border-radius: 10px;
+}
+table tbody tr{
+  background-color:#f3e4e4d6;
   
-  #notimage {
-    display: block;
-    float: left;
-    clear: both;
-    width: 100%;
-    &.hidden {
-      display: none;
-    }
-  }
+}
 
-  progress,
-  .progress {
-    // appearance: none;
-    display: inline;
-    clear: both;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 180px;
-    height: 8px;
-    border: 0;
-    border-radius: 4px;
-    background-color: #eee;
-    overflow: hidden;
-  }
-
-  .progress[value]::-webkit-progress-bar {
-    border-radius: 4px;
-    background-color: #eee;
-  }
-
-  .progress[value]::-webkit-progress-value {
-    background: linear-gradient(to right, darken($theme,8%) 0%, $theme 50%);
-    border-radius: 4px; 
-  }
-  .progress[value]::-moz-progress-bar {
-    background: linear-gradient(to right, darken($theme,8%) 0%, $theme 50%);
-    border-radius: 4px; 
-  }
-
-  input[type="file"] {
-    display: none;
-  }
-
+table th,
+table td {
+  padding: 1rem;
+}
+.download:hover{
+  cursor: pointer;
+}

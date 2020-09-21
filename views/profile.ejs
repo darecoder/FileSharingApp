@@ -8,7 +8,7 @@
             <form action="/files/upload" method="POST" enctype="multipart/form-data" id="file-upload-form" class="uploader">
                 <div class="custom-file mb-3">
                     <input type="file" class="custom-file-input" name="file" id="file1" onchange="readSingleFile(this.files)">
-                    <input type=text name="filename" value="Choose file" class="custom-file-label" id="file-label">
+                    <input type=text name="filename"  class="custom-file-label" id="file-label">
                 </div>
                 <input type="submit" value="Submit" class="btn btn-primary btn-block">
             </form>
@@ -22,7 +22,8 @@
 <script>
     function readSingleFile(e) {
         const name = e[0].name;
-        document.getElementById("file-label").textContent = name;
+        console.log(name);
+        document.getElementById("file-label").value = name;
     }
 </script>
 <%- include ('partials/footer'); -%>
