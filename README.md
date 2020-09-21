@@ -20,4 +20,8 @@
 ![HomeAfterLogin](https://user-images.githubusercontent.com/42637982/93740889-fe9f1d80-fc08-11ea-9a73-042928ee61bd.png)
 
   - UPLOAD
-![upload](https://user-images.githubusercontent.com/42637982/93740895-0232a480-fc09-11ea-9a8b-48ce401510ea.png)
+![upload](https://user-images.githubusercontent.com/42637982/93774242-ab47c200-fc3e-11ea-824a-dd910b2b24e1.png)
+
+  - DOWNLOAD
+![Download](https://user-images.githubusercontent.com/42637982/93773424-c108b780-fc3d-11ea-977d-f49ebde524df.png)
+
