@@ -22,9 +22,15 @@ router.post('/files/upload',middleware.isloggedin,upload.single('file'),async fu
     console.log(req.user);
     res.send("Uploaded Successfully");
 })
-router.post('/files/download/:fileid',middleware.isloggedin,async function(req,res){
-   const buffer=file.findById(req.params.fileid);
-   console.log(fileid);
-   res.send({});
+router.get('/files/download/:fileid',middleware.isloggedin,async function(req,res){
+   const buffer=await file.findById(req.params.fileid);
+   console.log(buffer);
+    res.set({
+        'Cache-Control':'no-cache',
+        'Content-Type':'multipart/form-data',
+        'Content-Disposition':'attachment; filename='+buffer.filename,
+        'Content-Length':buffer.file.length
+    })
+   res.send(buffer.file);
 })
 module.exports=router;
