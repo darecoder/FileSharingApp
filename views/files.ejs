@@ -1,8 +1,59 @@
 <%- include ('partials/header'); -%>
-<div class="mybg">
-    <div class="mymain">
-        <h1 id="type"> </h1>
-        </div>
-</div> 
+<h1>Files</h1>
+<div class="mycontainer">
+    <div class="heading">
+     <h1>Files</h1>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+             <th>FileName</th>
+             <th>Author</th>
+             <th>Created At</th>
+             <th>Download</th>
+            </tr>
+            </thead>
+            <tbody>
+             <% files.forEach(function(file){ %>
+               <tr>
+                   <td><%=file.filename %></td>
+                   <td><%=file.author %></td>
+                   <td><%=moment(file.time).fromNow()%></td>
+                   <td><div class="download" onclick="onDownload('<%=file._id%>','<%=file.filename%>')"><u>Download</u></td>
+               </tr>
+             <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    function onDownload(fileid,filename){
+        var request = new XMLHttpRequest();
+    request.open('GET', `/files/download/${fileid}`, true);
+    request.responseType = 'blob';
+
+    request.onload = function() {
+      if(request.status === 200) {
+        var disposition = request.getResponseHeader('Content-Disposition');
+       
+        var blob = new Blob([request.response], { type: 'application/octet-stream' });
+        var link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = filename;
+
+        document.body.appendChild(link);
+
+        link.click();
+
+        document.body.removeChild(link);
+      }
+      
+    };
+
+    request.send();
+
+    }
+</script>
 
 <%- include ('partials/footer'); -%>
