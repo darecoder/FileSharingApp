@@ -5,6 +5,7 @@ var bodyparser=require('body-parser');
 var mongoose =require("mongoose");
 var authroutes=require("./routes/auth");
 var fileroutes=require("./routes/file");
+var profileroutes=require("./routes/profile");
 var passport=require("passport");
 var user=require('./model/user');
 var moment = require('moment');
@@ -39,6 +40,7 @@ app.use(function(req,res,next)
 
 app.use(authroutes);
 app.use(fileroutes);
+app.use(profileroutes);
 
 app.listen(process.env.PORT||3000,process.env.IP,function(){
     console.log('server has started');
