@@ -1,17 +1,20 @@
 <%- include ('partials/header'); -%>
- 
- <h2>Upload file here!</h2>
-  <div class="container">
-    <div class="row">
-        <div class="col-md-6 m-auto">
-            <h1 class="my-4">Lets upload some stuff</h1>
-            <form action="/files/upload" method="POST" enctype="multipart/form-data" id="file-upload-form" class="uploader">
-                <div class="custom-file mb-3">
-                    <input type="file" class="custom-file-input" name="file" id="file1" onchange="readSingleFile(this.files)">
-                    <input type=text name="filename"  class="custom-file-label" id="file-label">
+ <div class="mycontainer">
+    <div class="heading">
+         <h2>Upload file here!</h2>
+          <div class="container">
+            <div class="row">
+                <div class="col-md-6 m-auto">
+                    <h1 class="my-4">Let's upload some stuff</h1>
+                    <form action="/files/upload" method="POST" enctype="multipart/form-data" id="file-upload-form" class="uploader">
+                        <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input" name="file" id="file1" onchange="readSingleFile(this.files)">
+                            <input type=text name="filename"  class="custom-file-label" id="file-label">
+                        </div>
+                        <input type="submit" value="Submit" class="btn btn-success">
+                    </form>
                 </div>
-                <input type="submit" value="Submit" class="btn btn-primary btn-block">
-            </form>
+            </div>
         </div>
     </div>
 </div>
