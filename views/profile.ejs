@@ -1,30 +1,28 @@
 <%- include ('partials/header'); -%>
-<div class="mybg">
-  <div class="mymain">
-    <div class="ui middle aligned center aligned grid">
-      <div class="column">
-
-         <h2>Upload file here!</h2>
-
-          <!-- Upload  -->
-          <form id="file-upload-form" class="uploader">
-            <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
-
-            <label for="file-upload" id="file-drag">
-              <div id="start">
-                <i class="fa fa-download" aria-hidden="true"></i>
-                <div>Select a file or drag here</div>
-              </div>
-              <div id="response" class="hidden">
-                <div id="messages"></div>
-                <progress class="progress" id="file-progress" value="0">
-                  <span>0</span>%
-                </progress>
-              </div>
-            </label>
-          </form>
-      </div>
+ 
+ <h2>Upload file here!</h2>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6 m-auto">
+            <h1 class="my-4">Lets upload some stuff</h1>
+            <form action="/files/upload" method="POST" enctype="multipart/form-data" id="file-upload-form" class="uploader">
+                <div class="custom-file mb-3">
+                    <input type="file" class="custom-file-input" name="file" id="file1" onchange="readSingleFile(this.files)">
+                    <input type=text name="filename" value="Choose file" class="custom-file-label" id="file-label">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary btn-block">
+            </form>
+        </div>
     </div>
-  </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    function readSingleFile(e) {
+        const name = e[0].name;
+        document.getElementById("file-label").textContent = name;
+    }
+</script>
 <%- include ('partials/footer'); -%>
