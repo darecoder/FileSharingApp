@@ -5,11 +5,11 @@ var middleware=require("../middleware");
 var user=require('../model/user');
 router.get('/',middleware.auth,function(req,res)
 { 
-    res.render('home.ejs');
+    res.render('../app/views/home.ejs');
 })
 
 router.get('/register',middleware.auth,function(req, res) {
-    res.render('register.ejs')
+    res.render('../app/views/register.ejs')
    
 })
 router.post('/register',middleware.auth,function(req, res) {
@@ -30,7 +30,7 @@ router.post('/register',middleware.auth,function(req, res) {
      })
  })
  router.get('/login',middleware.auth,function(req, res) {
-     res.render('login.ejs')
+     res.render('../app/views/login.ejs')
  })
  router.post('/login',middleware.auth,passport.authenticate('local',
  {

@@ -9,7 +9,7 @@ const upload=multer({
 router.get('/files', middleware.isloggedin, async function (req, res) {
     const files=await file.find({isPublic:true})
     console.log(files);
-    res.render('files.ejs',{files:files});
+    res.render('../app/views/files.ejs',{files:files});
 
 });
 router.post('/files/upload',middleware.isloggedin,upload.single('file'),async function(req,res){
