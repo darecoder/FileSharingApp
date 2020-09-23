@@ -42,11 +42,7 @@ app.use(authroutes);
 app.use(fileroutes);
 app.use(profileroutes);
 
-app.get('/test', function(req, res) {
-    res.send('hello');
-})
-
-app.listen(process.env.PORT||3000,process.env.IP,function(){
+app.listen(process.env.PORT || 3000, process.env.IP, function() {
     console.log('server has started');
 });
 
